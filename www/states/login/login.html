@@ -1,0 +1,8 @@
+<ion-view view-title="Login">
+  <ion-content>
+    <h1>Login</h1>
+    <input type='email' ng-model='login.email' placeholder='Email'>
+    <input type='password' ng-model='login.code' placholder='Code' ng-if='emailed'>
+    <button type='button button-stable' ui-sref='app.home'>Login</button>
+  </ion-content>
+</ion-view>
