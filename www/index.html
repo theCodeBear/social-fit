@@ -12,10 +12,13 @@
     <link href="css/ionic.app.css" rel="stylesheet">
     -->
 
+    <!-- jquery -->
+    <script src='lib/jquery/dist/jquery.min.js'></script>
     <!-- ionic/angularjs js -->
     <script src="lib/ionic/js/ionic.bundle.js"></script>
 
     <!-- cordova script (this will be a 404 during development) -->
+    <script src="lib/ngCordova/dist/ng-cordova.js"></script>
     <script src="cordova.js"></script>
 
   </head>
@@ -23,7 +26,11 @@
     <ion-nav-view></ion-nav-view>
 
 
+    <!-- libraries -->
+    <script src='lib/lodash/lodash.js'></script>
+    <!-- js files -->
     <script src="app.js"></script>
+    <script src='services/lodash.service.js'></script>
     <script src='states/login/login.controller.js'></script>
     <script src='states/home/home.controller.js'></script>
     <script src='states/contacts/contacts.controller.js'></script>

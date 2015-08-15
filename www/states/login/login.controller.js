@@ -2,7 +2,7 @@
 
 angular.module('fitFriend')
 
-.controller('LoginCtrl', function($scope) {
+.controller('LoginCtrl', function($scope, $state) {
 
   var name, email, code;
   $scope.emailed = false;
@@ -15,7 +15,7 @@ angular.module('fitFriend')
 
   $scope.submitCode = function(codeInput) {
     code = code;
-    $state.go('app.home');
+    $state.go('app.contacts');
   };
 
 });

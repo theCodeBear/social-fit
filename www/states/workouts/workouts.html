@@ -3,17 +3,18 @@
 
     <div class="item item-input-inset">
       <label class="item-input-wrapper">
-        <input type="text" ng-model='newWorkout.title' placeholder="Workout Title">
+        <input id='new-workout-title' type="text" ng-model='newWorkout.title' placeholder="Workout Title">
       </label>
-      <button class='button button-small button-positive' ng-click='addWorkout(newWorkout.title)'>
+      <button type='button' class='button button-small button-positive' ng-click='addWorkout(newWorkout.title)'>
         +
       </button>
     </div>
-
+{{newWorkout.title}}
 
     <div class='list list-inset'>
-      <div class='item' ng-repeat='workout in workouts track by $index'>
+      <div class='item workout-list-item' ng-repeat='workout in workouts track by $index'>
         {{ workout.title }}
+        <span class='workout-empty' ng-if='!workout.content'>Empty</span>
       </div>
     </div>
   </ion-content>
