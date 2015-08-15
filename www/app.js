@@ -31,6 +31,12 @@ angular.module('fitFriend', ['ionic', 'ngCordova'])
     controller: 'LoginCtrl'
   })
 
+  .state('contacts', {
+    url: '/contacts',
+    templateUrl: 'states/contacts/contacts.html',
+    controller: 'ContactsCtrl'
+  })
+
   .state('app', {
     url: '/app',
     abstract: true,
@@ -48,14 +54,15 @@ angular.module('fitFriend', ['ionic', 'ngCordova'])
     }
   })
 
-  .state('app.contacts', {
-    url: '/contacts',
+  .state('app.trainingPartners', {
+    url: '/trainingPartners',
     views: {
       'menuContent': {
-        templateUrl: 'states/contacts/contacts.html',
-        controller: 'ContactsCtrl'
+        templateUrl: 'states/trainingPartners/trainingPartners.html',
+        controller: 'TrainingPartnersCtrl'
       }
-    }
+    },
+    cache: false
   })
 
   .state('app.account', {

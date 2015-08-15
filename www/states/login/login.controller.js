@@ -15,7 +15,7 @@ angular.module('fitFriend')
 
   $scope.submitCode = function(codeInput) {
     code = code;
-    $state.go('app.contacts');
+    $state.go('contacts');
   };
 
 });

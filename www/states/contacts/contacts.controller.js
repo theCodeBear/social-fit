@@ -2,11 +2,9 @@
 
 angular.module('fitFriend')
 
-.controller('ContactsCtrl', function($scope, $ionicPlatform, $cordovaContacts, _) {
+.controller('ContactsCtrl', function($scope, $ionicPlatform, $cordovaContacts, $state, _ ) {
 
   $scope.contacts = [];   // array of {name: String, email: Array}
-  $scope.emailFound;
-  $scope.find = { email: ''};
 
   $ionicPlatform.ready(function() {
     $cordovaContacts.find({desiredFields: ['name', 'emails']}).then(function(contacts) {
@@ -21,15 +19,11 @@ angular.module('fitFriend')
           count++;
         }
       });
-      // console.log(JSON.stringify($scope.contacts, null, 2));
     });
   });
 
   $scope.addContacts = function() {
-  };
-
-  $scope.findEmail = function() {
-    $scope.find.email = '';
+    $state.go('app.home');
   };
 
 });

@@ -38,12 +38,20 @@
   padding-bottom: 1.2em;
 }
 
-/* CONTACTS.HTML */
+/* TRAININGPARTNERS.HTML */
 
 #find-email-input {
   font-size: 1.3em;
   line-height: 1.3em;
 }
+
+.partner-button {
+  font-size: 1.3em;
+}
+
+/* END OF TRAININGPARTNERS.HTML */
+
+/* CONTACTS.HTML */
 
 .contact-name {
   font-size: 1.2em;
