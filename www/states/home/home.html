@@ -1,5 +1,22 @@
 <ion-view view-title="Home">
   <ion-content class='has-header'>
-    <h1>Home</h1>
+
+    <h3 class='margin-top-medium'>Next Workout</h3>
+    <div class='card'>
+      Date <br>
+      Time <br>
+      Workout Title with Friend
+    </div>
+
+    <h3 class='margin-top-medium'>Next 7 Days</h3>
+    <div class='card'>
+      <div class='one-in-seven' ng-repeat='day in next7Days track by $index'>
+        <span class='h2'>{{ day }}</span> <br>
+        <img src='img/dumbbell.png' alt='Dumbbell'>
+      </div>
+    </div>
+
+    <h3 class='margin-top-medium'>Working Out Today</h3>
+    Show list of friends pictures
   </ion-content>
 </ion-view>

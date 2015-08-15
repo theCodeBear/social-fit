@@ -28,7 +28,7 @@ angular.module('fitFriend', ['ionic'])
   .state('login', {
     url: '/login',
     templateUrl: 'states/login/login.html',
-    // controller: 'LoginCtrl'
+    controller: 'LoginCtrl'
   })
 
   .state('app', {
@@ -42,8 +42,8 @@ angular.module('fitFriend', ['ionic'])
     url: '/home',
     views: {
       'menuContent': {
-        templateUrl: 'states/home/home.html'
-        // controller: 'splashScreenCtrl'
+        templateUrl: 'states/home/home.html',
+        controller: 'HomeCtrl'
       }
     }
   })
@@ -52,18 +52,18 @@ angular.module('fitFriend', ['ionic'])
     url: '/contacts',
     views: {
       'menuContent': {
-        templateUrl: 'states/contacts/contacts.html'
-        // controller: 'splashScreenCtrl'
+        templateUrl: 'states/contacts/contacts.html',
+        controller: 'ContactsCtrl'
       }
     }
   })
 
-  .state('app.email', {
-    url: '/email',
+  .state('app.account', {
+    url: '/account',
     views: {
       'menuContent': {
-        templateUrl: 'states/email/email.html'
-        // controller: 'splashScreenCtrl'
+        templateUrl: 'states/account/account.html',
+        controller: 'AccountCtrl'
       }
     }
   })
@@ -72,8 +72,8 @@ angular.module('fitFriend', ['ionic'])
     url: '/spotify',
     views: {
       'menuContent': {
-        templateUrl: 'states/spotify/spotify.html'
-        // controller: 'splashScreenCtrl'
+        templateUrl: 'states/spotify/spotify.html',
+        controller: 'SpotifyCtrl'
       }
     }
   })
@@ -82,8 +82,8 @@ angular.module('fitFriend', ['ionic'])
     url: '/schedule',
     views: {
       'menuContent': {
-        templateUrl: 'states/schedule/schedule.html'
-        // controller: 'splashScreenCtrl'
+        templateUrl: 'states/schedule/schedule.html',
+        controller: 'ScheduleCtrl'
       }
     }
   })
@@ -92,8 +92,8 @@ angular.module('fitFriend', ['ionic'])
     url: '/workouts',
     views: {
       'menuContent': {
-        templateUrl: 'states/workouts/workouts.html'
-        // controller: 'splashScreenCtrl'
+        templateUrl: 'states/workouts/workouts.html',
+        controller: 'WorkoutsCtrl'
       }
     }
   })
@@ -102,8 +102,8 @@ angular.module('fitFriend', ['ionic'])
     url: '/todaysWorkout',
     views: {
       'menuContent': {
-        templateUrl: 'states/todaysWorkout/todaysWorkout.html'
-        // controller: 'splashScreenCtrl'
+        templateUrl: 'states/todaysWorkout/todaysWorkout.html',
+        controller: 'TodaysWorkoutCtrl'
       }
     }
   })
@@ -112,8 +112,8 @@ angular.module('fitFriend', ['ionic'])
     url: '/createWorkout',
     views: {
       'menuContent': {
-        templateUrl: 'states/createWorkout/createWorkout.html'
-        // controller: 'splashScreenCtrl'
+        templateUrl: 'states/createWorkout/createWorkout.html',
+        controller: 'CreateWorkoutCtrl'
       }
     }
   });

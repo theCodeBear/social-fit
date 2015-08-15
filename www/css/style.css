@@ -1,1 +1,27 @@
 /* Empty. Add your own CSS if you like */
+
+
+#seven-days {
+  position: absolute;
+  margin: 0 auto;
+}
+
+.one-in-seven {
+  width: 14.28%;
+  position: display;
+  margin: 0 auto;
+  display: inline-block;
+  border: 2px solid silver;
+  text-align: center;
+}
+
+.margin-top-medium {
+  margin-top: 1em !important;
+}
+
+#connect-spotify {
+  margin-top: 15em !important;
+  width: 90%;
+  font-size: 1.5em;
+  margin: 0 auto;
+}
