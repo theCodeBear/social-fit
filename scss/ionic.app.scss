@@ -21,3 +21,217 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 // Include all of Ionic
 @import "www/lib/ionic/scss/ionic";
 
+/* Empty. Add your own CSS if you like */
+
+
+
+.horiz-frame {
+  width: 95%;
+  margin: 0 auto;
+}
+
+.clear-button {
+  background-color: transparent;
+  border: none;
+  font-size: 1.3em;
+  font-weight: 700;
+}
+
+#seven-days {
+  position: absolute;
+  margin: 0 auto;
+}
+
+.one-in-seven {
+  width: 14.28%;
+  position: display;
+  margin: 0 auto;
+  display: inline-block;
+  border: 2px solid silver;
+  text-align: center;
+}
+
+.margin-top-medium {
+  margin-top: 1em !important;
+}
+
+#connect-spotify {
+  margin-top: 15em !important;
+  width: 90%;
+  font-size: 1.5em;
+  margin: 0 auto;
+}
+
+.workout-empty {
+  color: gray;
+  float: right;
+  font-style: italic;
+}
+
+.workout-list-item {
+  font-size: 1.5em;
+  padding-top: 1.2em;
+  padding-bottom: 1.2em;
+}
+
+/* TRAININGPARTNERS.HTML */
+
+#find-email-input {
+  font-size: 1.3em;
+  line-height: 1.3em;
+}
+
+.partner-button {
+  font-size: 1.3em;
+}
+
+/* END OF TRAININGPARTNERS.HTML */
+
+/* CONTACTS.HTML */
+
+.contact-name {
+  font-size: 1.2em;
+  width: 80%;
+  display: inline-block;
+  padding-left: 10px;
+  text-overflow: ellipsis;
+}
+
+.email-list {
+  font-size: 0.8em;
+  width: 70%;
+  display: inline-block;
+  float: right;
+  text-align: right;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.select-email {
+  width: 100%;
+  display: inline-block;
+  float: right;
+  padding: 10px 4px 10px 4px;
+  background-color: silver;
+  border-radius: 5px;
+  border: none;
+  overflow-x: hidden;
+  border: 2px solid green;
+}
+
+#add-contacts {
+  font-size: 1.4em;
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  color: black;
+}
+
+/* END OF CONTACTS.HTML */
+
+/* SCHEDULE.HTML */
+
+.month-calendar-frame {
+  margin-top: 1em;
+}
+
+.week-in-month {
+  width: 95vw;
+  margin: 0 auto;
+  height: 7vh;
+}
+
+.day-in-week {
+  width: (100% / 7);
+  text-align: left;
+  padding: 5px;
+  border: 1px solid black;
+  font-size: 0.8em;
+  padding-top: 0;
+}
+
+.week-header {
+
+  div {
+    font-size: 2em;
+    text-align: center;
+    padding: 5px;
+    padding-top: 10px;
+    background-color: silver;
+  }
+}
+
+.today-month {
+  border: 2px solid gold;
+  background-color: rgba(255,215,0,0.8);
+}
+
+.legend-category {
+  display: inline-block;
+  width: 24%;
+  height: (22vh / 7);
+  font-size: 0.8em;
+  text-align: center;
+}
+
+.legend-day {
+  width: (100vw / 53);
+  height: (20vh / 7) !important;
+  display: inline-block;
+  border: 1px solid black;
+}
+
+.legend-key {
+  vertical-align: top;
+}
+
+.year-frame {
+  margin-top: 2em;
+}
+
+.year-view {
+  width: 100%;
+  height: 20vh;
+  border-bottom: 1px solid black;
+  border-left: 1px solid black;
+  margin: 0 auto;
+  margin-bottom: 10px;
+  padding: 0;
+}
+
+.week {
+  width: (100% / 53);
+  height: 20vh;
+  padding: 0;
+  display: inline-block;
+}
+
+.day {
+  height: (100% / 7);
+  border-top: 1px solid black;
+  border-right: 1px solid black;
+}
+
+.worked-out {
+  background-color: green;
+}
+
+.no-workout {
+  background-color: gray;
+}
+
+/*.future-day {
+  background-color: darkgrey;
+}*/
+
+.scheduled-workout-day {
+  background-color: orange;
+}
+
+.today {
+  background-color: yellow;
+}
+
+
+/* END OF SCHEDULE.HTML */
