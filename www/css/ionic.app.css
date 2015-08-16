@@ -7726,12 +7726,6 @@ a.button {
 .margin-top-medium {
   margin-top: 1em !important; }
 
-#connect-spotify {
-  margin-top: 15em !important;
-  width: 90%;
-  font-size: 1.5em;
-  margin: 0 auto; }
-
 .workout-empty {
   color: gray;
   float: right;
@@ -7871,3 +7865,44 @@ a.button {
   background-color: yellow; }
 
 /* END OF SCHEDULE.HTML */
+/* ACCOUNT.HTML */
+#account-form {
+  margin-top: 2em;
+  text-align: center; }
+
+#email-change {
+  text-align: center;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  font-size: 1.4em;
+  padding: 20px; }
+
+#save-account {
+  font-size: 2em;
+  background-color: darkblue;
+  color: white;
+  font-weight: 300;
+  margin-top: 3em; }
+
+/* END OF ACCOUNT.HTML */
+/* SPOTIFY.HTML */
+#connect-spotify {
+  margin-top: 40%;
+  font-size: 2em;
+  text-align: center; }
+
+.black-back {
+  background-color: black;
+  width: 3.8em;
+  height: 3.8em;
+  margin: 0 auto;
+  margin-top: -4.5em;
+  border-radius: 50px; }
+
+.fa-spotify {
+  color: #1EDF6C;
+  background-color: transparent; }
+  .fa-spotify:active {
+    color: red; }
+
+/* END OF SPOTIFY.HTML */
