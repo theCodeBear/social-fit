@@ -103,26 +103,6 @@ angular.module('fitFriend', ['ionic', 'ngCordova'])
         controller: 'WorkoutsCtrl'
       }
     }
-  })
-
-  .state('app.todaysWorkout', {
-    url: '/todaysWorkout',
-    views: {
-      'menuContent': {
-        templateUrl: 'states/todaysWorkout/todaysWorkout.html',
-        controller: 'TodaysWorkoutCtrl'
-      }
-    }
-  })
-
-  .state('app.createWorkout', {
-    url: '/createWorkout',
-    views: {
-      'menuContent': {
-        templateUrl: 'states/createWorkout/createWorkout.html',
-        controller: 'CreateWorkoutCtrl'
-      }
-    }
   });
 
   // if none of the above states are matched, use this as the fallback
