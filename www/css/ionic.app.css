@@ -7875,7 +7875,9 @@ a.button {
   margin-top: 1em;
   margin-bottom: 1em;
   font-size: 1.4em;
-  padding: 20px; }
+  padding: 20px;
+  border: 2px solid gray;
+  line-height: 1.4em; }
 
 #save-account {
   font-size: 2em;

@@ -7,6 +7,7 @@ angular.module('fitFriend')
   $scope.contacts = [];   // array of {name: String, email: Array}
 
   $ionicPlatform.ready(function() {
+    if (window.cordova) {
     $cordovaContacts.find({desiredFields: ['name', 'emails']}).then(function(contacts) {
       var count = 0;
       contacts.forEach(function(contact) {
@@ -20,6 +21,7 @@ angular.module('fitFriend')
         }
       });
     });
+    } else { console.info('NOT ON A MOBILE DEVICE SO DID NOT GRAB CONTACTS')}
   });
 
   $scope.addContacts = function() {

@@ -2,20 +2,30 @@
 
 angular.module('fitFriend')
 
-.controller('LoginCtrl', function($scope, $state) {
+.controller('LoginCtrl', function($scope, $state, $http) {
 
-  var name, email, code;
   $scope.emailed = false;
+  $scope.security = {};
+  $scope.login = {};
 
-  $scope.submitEmail = function(nameInput, emailInput) {
-    $scope.emailed = true;
-    name = nameInput;
-    email = emailInput;
+  $scope.submitEmail = function(creds) {
+    $http.post('http://localhost:3000/user/login', creds)
+    .then(function(data) {
+      $scope.emailed = true;
+      alert('You have been sent an email with your one time login code. It may take a few minutes for the email to arrive.');
+    }).catch(function(data) {
+      alert(data.data);
+    });
   };
 
-  $scope.submitCode = function(codeInput) {
-    code = code;
-    $state.go('contacts');
+  $scope.submitCode = function(codeInput, login) {
+    $http.post('http://localhost:3000/user/authenticate', {email: login.email, name: login.name, code: codeInput.code})
+    .then(function(response) {
+      console.log(response.data.user);
+      $state.go('contacts');
+    }).catch(function(response) {
+      alert(response.data);
+    });
   };
 
 });
