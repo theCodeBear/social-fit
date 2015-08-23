@@ -4,9 +4,9 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
-angular.module('fitFriend', ['ionic', 'ngCordova', 'angularMoment'])
+angular.module('fitFriend', ['ionic', 'ngCordova', 'angularMoment', 'satellizer'])
 
-.run(function($ionicPlatform, $state) {
+.run(function($ionicPlatform, $state, $auth) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
@@ -20,9 +20,14 @@ angular.module('fitFriend', ['ionic', 'ngCordova', 'angularMoment'])
       StatusBar.styleDefault();
     }
   });
+
+
 })
 
-.config(function($stateProvider, $urlRouterProvider) {
+.config(function($stateProvider, $urlRouterProvider, $authProvider) {
+
+  $authProvider.loginUrl = 'http://localhost:3000/user/authenticate';
+
   $stateProvider
 
   .state('login', {

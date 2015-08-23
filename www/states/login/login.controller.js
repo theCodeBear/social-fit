@@ -2,7 +2,7 @@
 
 angular.module('fitFriend')
 
-.controller('LoginCtrl', function($scope, $state, $http) {
+.controller('LoginCtrl', function($scope, $state, $http, $auth, $window) {
 
   $scope.emailed = false;
   $scope.security = {};
@@ -19,9 +19,11 @@ angular.module('fitFriend')
   };
 
   $scope.submitCode = function(codeInput, login) {
-    $http.post('http://localhost:3000/user/authenticate', {email: login.email, name: login.name, code: codeInput.code})
+    // $http.post('http://localhost:3000/user/authenticate', {email: login.email, name: login.name, code: codeInput.code})
+    $auth.login({email: login.email, name: login.name, code: codeInput.code})
     .then(function(response) {
       console.log(response.data.user);
+      $window.localStorage.setItem('user', JSON.stringify(response.data.user));
       $state.go('contacts');
     }).catch(function(response) {
       alert(response.data);
