@@ -247,14 +247,21 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
   line-height: 1.4em;
 }
 
-#save-account {
+.account-button {
   font-size: 2em;
+  font-weight: 300;
+}
+
+#save-account {
   background-color: darkblue;
   color: white;
-  font-weight: 300;
   margin-top: 3em;
 }
 
+#logout {
+  top: 80vh;
+  position: absolute;
+}
 
 /* END OF ACCOUNT.HTML */
 

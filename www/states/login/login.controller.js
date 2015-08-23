@@ -2,7 +2,7 @@
 
 angular.module('fitFriend')
 
-.controller('LoginCtrl', function($scope, $state, $http, $auth, $window) {
+.controller('LoginCtrl', function($scope, $state, $http, $auth, $window, User) {
 
   $scope.emailed = false;
   $scope.security = {};
@@ -24,6 +24,7 @@ angular.module('fitFriend')
     .then(function(response) {
       console.log(response.data.user);
       $window.localStorage.setItem('user', JSON.stringify(response.data.user));
+      User.set(JSON.parse($window.localStorage.getItem('user')));
       $state.go('contacts');
     }).catch(function(response) {
       alert(response.data);

@@ -3,14 +3,16 @@
 
     <div id='account-form'>
       <div>
-        current email from user
+        {{ user.email }}
       </div>
-      <input id='email-change' type='email' class='col col-80 col-offset-10' ng-model='user.email' placeholder='Enter New Email'>
+      <input id='email-change' type='email' class='col col-80 col-offset-10' ng-model='user.newEmail' placeholder='Enter New Email'>
       <img ng-src='{{ photo || "https://placeholdit.imgix.net/~text?txtsize=33&txt=You%20Go%20Here%20:)&w=300&h=250" }}' alt='Profile Photo'><br>
-      <button id='save-account' type='button' class='button button-block'>
+      <button id='save-account' type='button' class='button button-block account-button'>
         Save
       </button>
     </div>
+
+    <button log-out id='logout' type='button' class='button button-block account-button'>Log Out</button>
 
   </ion-content>
 </ion-view>

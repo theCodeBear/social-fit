@@ -6,7 +6,7 @@
 // 'starter.controllers' is found in controllers.js
 angular.module('fitFriend', ['ionic', 'ngCordova', 'angularMoment', 'satellizer'])
 
-.run(function($ionicPlatform, $state, $auth) {
+.run(function($ionicPlatform, $state, $auth, $rootScope, $window, User) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
@@ -19,6 +19,17 @@ angular.module('fitFriend', ['ionic', 'ngCordova', 'angularMoment', 'satellizer'
       // org.apache.cordova.statusbar required
       StatusBar.styleDefault();
     }
+    User.set(JSON.parse($window.localStorage.getItem('user')));
+  });
+
+
+  $rootScope.$on('$stateChangeStart', function(event, toState, toParams) {
+    // if not authenticated to go to state
+    if (toState.data && toState.data.authenticate && !$auth.isAuthenticated())
+      event.preventDefault();
+    // prevent going to login state if logged in
+    else if (toState.name === 'login' && $auth.isAuthenticated())
+      event.preventDefault();
   });
 
 
@@ -33,13 +44,19 @@ angular.module('fitFriend', ['ionic', 'ngCordova', 'angularMoment', 'satellizer'
   .state('login', {
     url: '/login',
     templateUrl: 'states/login/login.html',
-    controller: 'LoginCtrl'
+    controller: 'LoginCtrl',
+    data: {
+      authenticate: false
+    }
   })
 
   .state('contacts', {
     url: '/contacts',
     templateUrl: 'states/contacts/contacts.html',
-    controller: 'ContactsCtrl'
+    controller: 'ContactsCtrl',
+    data: {
+      authenticate: true
+    }
   })
 
   .state('app', {
@@ -56,6 +73,9 @@ angular.module('fitFriend', ['ionic', 'ngCordova', 'angularMoment', 'satellizer'
         templateUrl: 'states/home/home.html',
         controller: 'HomeCtrl'
       }
+    },
+    data: {
+      authenticate: true
     }
   })
 
@@ -67,7 +87,10 @@ angular.module('fitFriend', ['ionic', 'ngCordova', 'angularMoment', 'satellizer'
         controller: 'TrainingPartnersCtrl'
       }
     },
-    cache: false
+    cache: false,
+    data: {
+      authenticate: true
+    }
   })
 
   .state('app.account', {
@@ -77,6 +100,9 @@ angular.module('fitFriend', ['ionic', 'ngCordova', 'angularMoment', 'satellizer'
         templateUrl: 'states/account/account.html',
         controller: 'AccountCtrl'
       }
+    },
+    data: {
+      authenticate: true
     }
   })
 
@@ -87,6 +113,9 @@ angular.module('fitFriend', ['ionic', 'ngCordova', 'angularMoment', 'satellizer'
         templateUrl: 'states/spotify/spotify.html',
         controller: 'SpotifyCtrl'
       }
+    },
+    data: {
+      authenticate: true
     }
   })
 
@@ -97,6 +126,9 @@ angular.module('fitFriend', ['ionic', 'ngCordova', 'angularMoment', 'satellizer'
         templateUrl: 'states/schedule/schedule.html',
         controller: 'ScheduleCtrl'
       }
+    },
+    data: {
+      authenticate: true
     }
   })
 
@@ -107,6 +139,9 @@ angular.module('fitFriend', ['ionic', 'ngCordova', 'angularMoment', 'satellizer'
         templateUrl: 'states/workouts/workouts.html',
         controller: 'WorkoutsCtrl'
       }
+    },
+    data: {
+      authenticate: true
     }
   });
 
