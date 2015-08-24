@@ -4,7 +4,7 @@ angular.module('fitFriend')
 
 .factory('_', function($window) {
 
-  var _ = $window._;
+  const _ = $window._;
   delete($window._);
 
   return _;

@@ -4,9 +4,9 @@ angular.module('fitFriend')
 
 .factory('User', function() {
 
-  var _user;
+  let _user;
 
-  var service = {
+  let service = {
     get: get,
     set: set
   };

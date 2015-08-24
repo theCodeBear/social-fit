@@ -9,7 +9,7 @@ angular.module('fitFriend')
   $ionicPlatform.ready(function() {
     if (window.cordova) {
     $cordovaContacts.find({desiredFields: ['name', 'emails']}).then(function(contacts) {
-      var count = 0;
+      let count = 0;
       contacts.forEach(function(contact) {
         if (contact.emails) {
           $scope.contacts.push({name: '', email: []});
