@@ -1,9 +1,6 @@
 'use strict';
 
-angular.module('fitFriend')
+angular.module('fitFriend').controller('HomeCtrl', function ($scope) {
 
-.controller('HomeCtrl', function($scope) {
-
-  $scope.next7Days = ['M','T','W','R','F','S','S'];
-
+  $scope.next7Days = ['M', 'T', 'W', 'R', 'F', 'S', 'S'];
 });

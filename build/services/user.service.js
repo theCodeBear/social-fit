@@ -1,6 +1,8 @@
 'use strict';
 
-angular.module('fitFriend').factory('User', function () {
+angular.module('fitFriend')
+
+.factory('User', function() {
 
   var _user;
 
@@ -11,12 +13,14 @@ angular.module('fitFriend').factory('User', function () {
 
   return service;
 
+
   function get() {
     return _user;
   }
 
   function set(user) {
-    user = typeof user === 'string' ? JSON.parse(user) : user;
+    user = (typeof user === 'string') ? JSON.parse(user) : user;
     _user = user;
   }
+
 });

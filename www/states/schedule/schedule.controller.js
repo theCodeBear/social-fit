@@ -1,8 +1,6 @@
 'use strict';
 
-angular.module('fitFriend')
-
-.controller('ScheduleCtrl', function($scope) {
+angular.module('fitFriend').controller('ScheduleCtrl', function ($scope) {
 
   $scope.year = moment().format('YYYY');
   $scope.month = moment().format('MMMM');
@@ -13,36 +11,35 @@ angular.module('fitFriend')
   var dayNum = '';
   var todayClass = '';
 
-// MONTH VIEW
+  // MONTH VIEW
   var weekRow;
-  for (var week=0; week<6; week++) {
-    weekRow = angular.element('<div id="week'+week+'" class="row week-in-month"></div>')
-    for (var day=0; day<7; day++) {
-      if (week === 0 && day === numFirstDayOfMonth-1) dayNum = 1;
-      todayClass = (dayNum == today) ? 'today-month' : '';
-      weekRow.append('<div class="day-in-week ' + todayClass +'">'+ dayNum +'</div>');
+  for (var week = 0; week < 6; week++) {
+    weekRow = angular.element('<div id="week' + week + '" class="row week-in-month"></div>');
+    for (var day = 0; day < 7; day++) {
+      if (week === 0 && day === numFirstDayOfMonth - 1) dayNum = 1;
+      todayClass = dayNum == today ? 'today-month' : '';
+      weekRow.append('<div class="day-in-week ' + todayClass + '">' + dayNum + '</div>');
       if (dayNum === lengthOfMonth) dayNum = '';
       if (dayNum) dayNum++;
     }
     angular.element('.month-calendar').append(weekRow);
   }
 
-// YEAR VIEW
+  // YEAR VIEW
   var yearCol;
-  for (week=0; week<53; week++) {
+  for (week = 0; week < 53; week++) {
     yearCol = angular.element('<div class="week"></div>');
-    for (day=0; day<7; day++) {
-      yearCol.append('<div id="'+ week + day +'" class="day"></div>');
+    for (day = 0; day < 7; day++) {
+      yearCol.append('<div id="' + week + day + '" class="day"></div>');
     }
     angular.element('.year-view').append(yearCol);
   }
 
-  $scope.prevMonth = function() {
-    console.log(moment().subtract(1, 'month').format('MM'))
+  $scope.prevMonth = function () {
+    console.log(moment().subtract(1, 'month').format('MM'));
   };
 
-  $scope.nextMonth = function() {
-    console.log(moment().add(1, 'month').format('MM'))
+  $scope.nextMonth = function () {
+    console.log(moment().add(1, 'month').format('MM'));
   };
-
 });

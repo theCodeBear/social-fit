@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+    <!-- <link href="lib/ionic/css/ionic.css" rel="stylesheet"> -->
+    <!-- <link href="css/style.css" rel="stylesheet"> -->
+
+    <link rel='stylesheet' href='lib/font-awesome/css/font-awesome.min.css'>
+
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above-->
+    <link href="css/ionic.app.css" rel="stylesheet">
+
+    <!-- jquery -->
+    <script src='lib/jquery/dist/jquery.min.js'></script>
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="lib/ngCordova/dist/ng-cordova.js"></script>
+    <script src="cordova.js"></script>
+
+  </head>
+  <body ng-app="fitFriend">
+    <ion-nav-view></ion-nav-view>
+
+
+    <!-- libraries -->
+    <script src='lib/lodash/lodash.js'></script>
+    <script src='lib/moment/moment.js'></script>
+    <script src='lib/angular-moment/angular-moment.js'></script>
+    <script src='lib/satellizer/satellizer.min.js'></script>
+    <!-- js files -->
+    <script src="app.js"></script>
+    <script src='services/lodash.service.js'></script>
+    <script src='services/user.service.js'></script>
+    <script src='directives/logout.directive.js'></script>
+    <script src='states/login/login.controller.js'></script>
+    <script src='states/home/home.controller.js'></script>
+    <script src='states/contacts/contacts.controller.js'></script>
+    <script src='states/account/account.controller.js'></script>
+    <script src='states/schedule/schedule.controller.js'></script>
+    <script src='states/spotify/spotify.controller.js'></script>
+    <script src='states/workouts/workouts.controller.js'></script>
+    <script src='states/trainingPartners/trainingPartners.controller.js'></script>
+  </body>
+</html>

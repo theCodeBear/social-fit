@@ -1,11 +1,8 @@
 'use strict';
 
-angular.module('fitFriend')
+angular.module('fitFriend').controller('SpotifyCtrl', function ($scope) {
 
-.controller('SpotifyCtrl', function($scope) {
-
-  $scope.spotify = function() {
-    console.log('spotify')
+  $scope.spotify = function () {
+    console.log('spotify');
   };
-
 });
