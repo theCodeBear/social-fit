@@ -145,6 +145,22 @@ angular.module('fitFriend', ['ionic', 'ngCordova', 'angularMoment', 'satellizer'
     data: {
       authenticate: true
     }
+  })
+
+  .state('app.createWorkout', {
+    url: '/createWorkout',
+    views: {
+      'menuContent': {
+        templateUrl: 'states/workouts/createWorkout.html',
+        controller: 'CreateWorkoutCtrl'
+      }
+    },
+    params: {
+      workoutTitle: null
+    },
+    data: {
+      authenticate: true
+    }
   });
 
   // if none of the above states are matched, use this as the fallback

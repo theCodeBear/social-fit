@@ -1,0 +1,21 @@
+<ion-view view-title="Create a Workout">
+  <ion-content class='has-header'>
+
+    <h2 class='text-center'> {{ workout.title || 'workout title' }} </h2>
+    <ul class='list'>
+      <li class='item' ng-repeat='exercise in workout.exercises track by $index'>
+        {{ exercise.title }}
+        <span ng-if='exercise.type=="time"'>
+          {{ exercise.mins }}:{{ exercise.secs}}
+        </span>
+        <span ng-if='exercise.type=="reps"'>
+          {{ exercise.sets }} x {{ exercise.reps }}
+        </span>
+      </li>
+    </ul>
+    <add-exercise></add-exercise>
+
+    <button type='button' class='button button-block fit-button margin-top-medium' ng-click='saveWorkout(workout)'>Save Workout</button>
+
+  </ion-content>
+</ion-view>

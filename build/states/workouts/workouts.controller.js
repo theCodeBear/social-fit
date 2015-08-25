@@ -2,24 +2,41 @@
 
 angular.module('fitFriend')
 
-.controller('WorkoutsCtrl', function($scope) {
+.controller('WorkoutsCtrl', ($scope, $http, User, $state) => {
 
+  // FUNCTION ASSIGNMENTS
+  $scope.addItem = addItem;
+
+  // LOCAL VARIABLES
+  const userId = User.get()._id;
+
+  // SCOPE VARIABLES
   $scope.newWorkout = {};
-  $scope.workouts = [
-    {
-      title: 'Legs/Core'
-    },
-    {
-      title: 'Upper Body'
-    },
-    {
-      title: 'Running'
-    }
-  ];
+  $scope.item = {};
+  $scope.placeholder = 'Workout Name';
+  // $scope.workouts = [
+  //   {
+  //     title: 'Legs/Core'
+  //   },
+  //   {
+  //     title: 'Upper Body'
+  //   },
+  //   {
+  //     title: 'Running'
+  //   }
+  // ];
 
-  $scope.addWorkout = function(title) {
-    $scope.workouts.unshift({title: title});
-    $scope.newWorkout.title = '';
+  // RUN ON CONTROLLER LOAD
+  $http.get(`http://localhost:3000/workouts?user=${userId}`).then(response => {
+    console.log(response.data);
+    if (response.data.length) $scope.workouts.push(response.data.workouts);
+  });
+
+  // FUNCTIONS
+  function addItem(title) {
+    // $scope.workouts.unshift({title: title});
+    $scope.item.title = '';
+    $state.go('app.createWorkout', { workoutTitle: title });
   };
 
 });

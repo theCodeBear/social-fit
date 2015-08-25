@@ -51,8 +51,21 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
   text-align: center;
 }
 
+.fit-button {
+  font-size: 2em;
+  font-weight: 300;
+}
+
 .margin-top-medium {
   margin-top: 1em !important;
+}
+
+.no-padding {
+  padding: 0;
+}
+
+.no-margin {
+  margin: 0;
 }
 
 .workout-empty {
@@ -247,11 +260,6 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
   line-height: 1.4em;
 }
 
-.account-button {
-  font-size: 2em;
-  font-weight: 300;
-}
-
 #save-account {
   background-color: darkblue;
   color: white;
@@ -292,5 +300,31 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 }
 
 /* END OF SPOTIFY.HTML */
+
+/* CREATEWORKOUT.HTML */
+
+.time-type {
+  position: absolute;
+  font-size: 33px;
+  margin-top: -9px;
+  margin-left: -14px;
+}
+
+#add-exercise-form {
+  background-color: lightgray;
+  padding: 0;
+
+  * {
+    /*border: 1px solid red;*/
+  }
+
+  input {
+    border-radius: 5px;
+    padding: 5px;
+  }
+}
+
+
+/* END OF CREATEWORKOUT.HTML */
 
 
