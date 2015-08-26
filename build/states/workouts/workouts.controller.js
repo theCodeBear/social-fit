@@ -14,6 +14,7 @@ angular.module('fitFriend')
   $scope.newWorkout = {};
   $scope.item = {};
   $scope.placeholder = 'Workout Name';
+  $scope.workouts = User.get().workouts;    // NEED TO POPULATE WORKOUTS FROM USER
   // $scope.workouts = [
   //   {
   //     title: 'Legs/Core'
@@ -27,10 +28,10 @@ angular.module('fitFriend')
   // ];
 
   // RUN ON CONTROLLER LOAD
-  $http.get(`http://localhost:3000/workouts?user=${userId}`).then(response => {
-    console.log(response.data);
-    if (response.data.length) $scope.workouts.push(response.data.workouts);
-  });
+  // $http.get(`http://localhost:3000/workouts?user=${userId}`).then(response => {
+  //   console.log(response.data);
+  //   if (response.data.length) $scope.workouts.push(response.data.workouts);
+  // });
 
   // FUNCTIONS
   function addItem(title) {

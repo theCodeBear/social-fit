@@ -2,6 +2,12 @@
   <ion-content class='has-header'>
 
     <h2 class='text-center'> {{ workout.title || 'workout title' }} </h2>
+    <div class='text-center'>
+      <select class='col col-100 text-center' ng-model='workout.type' style='font-size:2em;'>
+        <option>Workout Group</option>
+        <option>core</option>
+      </select>
+    </div>
     <ul class='list'>
       <li class='item' ng-repeat='exercise in workout.exercises track by $index'>
         {{ exercise.title }}

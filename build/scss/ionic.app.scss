@@ -320,7 +320,15 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 
   input {
     border-radius: 5px;
-    padding: 5px;
+    padding: 0 5px 0 5px;
+    font-size: 1.5em;
+
+    &[type='text'] {
+      line-height: 1.5em;
+    }
+    &[type='number'] {
+      line-height: 1.2em;
+    }
   }
 }
 

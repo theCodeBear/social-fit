@@ -1,7 +1,7 @@
 <form id='add-exercise-form' class="item" ng-submit='addExercise(exercise)'>
   <div class='row'>
     <label class="col col-50 no-padding">
-      <input id='new-workout-title' type="text" class='col col-100' ng-model='exercise.title' placeholder="Exercise Name" required>
+      <input id='new-workout-title' type="text" class='col col-100' ng-model='exercise.title' maxlength='25' placeholder="Exercise Name" required>
     </label>
     <label class="toggle col col-50 no-margin text-center">
      <input type="checkbox" ng-model='item.checked' ng-checked='item.checked' ng-change='showChecked(item.checked)'>

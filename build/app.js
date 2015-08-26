@@ -21,6 +21,10 @@ angular.module('fitFriend', ['ionic', 'ngCordova', 'angularMoment', 'satellizer'
       StatusBar.styleDefault();
     }
     User.set($window.localStorage.getItem('user'));
+    User.getFullUser().then((response) => {
+      console.log('full user', response.data.user);
+      User.set(response.data.user);
+    });
   });
 
 
