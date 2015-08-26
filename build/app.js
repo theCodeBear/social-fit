@@ -20,10 +20,17 @@ angular.module('fitFriend', ['ionic', 'ngCordova', 'angularMoment', 'satellizer'
       // org.apache.cordova.statusbar required
       StatusBar.styleDefault();
     }
-    User.set($window.localStorage.getItem('user'));
+    User.setId($window.localStorage.getItem('user'));
     User.getFullUser().then((response) => {
-      console.log('full user', response.data.user);
       User.set(response.data.user);
+      $rootScope.$emit('full user retrieved');
+    });
+  });
+
+  $ionicPlatform.on('resume', () => {
+    User.getFullUser().then((response) => {
+      User.set(response.data.user);
+      $rootScope.$emit('full user retrieved');
     });
   });
 
@@ -148,7 +155,8 @@ angular.module('fitFriend', ['ionic', 'ngCordova', 'angularMoment', 'satellizer'
     },
     data: {
       authenticate: true
-    }
+    },
+    cache: false
   })
 
   .state('app.createWorkout', {

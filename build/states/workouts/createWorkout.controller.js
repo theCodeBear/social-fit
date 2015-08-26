@@ -28,9 +28,7 @@ angular.module('fitFriend')
     console.log(workout);
     const user = User.get()._id;
     $http.post(`http://localhost:3000/workouts?user=${user}`, workout).then((response) => {
-      console.log(response);
-      User.saveToLocalStorage(response.data.user);
-      User.addWorkout(workout);
+      User.set(response.data.user);
       $state.go('app.workouts');
     }).catch((response) => {
       alert(response.data);

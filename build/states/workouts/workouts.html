@@ -6,7 +6,7 @@
     <div class='list list-inset'>
       <div workout-item class='item workout-list-item' ng-repeat='workout in workouts track by $index'>
         {{ workout.title }}
-        <span class='workout-empty' ng-if='!workout.content'>Empty</span>
+        <span class='workout-empty' ng-if='workout.exercises==0'>Empty</span>
       </div>
     </div>
   </ion-content>

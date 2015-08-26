@@ -2,7 +2,7 @@
 
 angular.module('fitFriend')
 
-.controller('WorkoutsCtrl', ($scope, $http, User, $state) => {
+.controller('WorkoutsCtrl', ($scope, $http, User, $state, $rootScope) => {
 
   // FUNCTION ASSIGNMENTS
   $scope.addItem = addItem;
@@ -14,24 +14,12 @@ angular.module('fitFriend')
   $scope.newWorkout = {};
   $scope.item = {};
   $scope.placeholder = 'Workout Name';
-  $scope.workouts = User.get().workouts;    // NEED TO POPULATE WORKOUTS FROM USER
-  // $scope.workouts = [
-  //   {
-  //     title: 'Legs/Core'
-  //   },
-  //   {
-  //     title: 'Upper Body'
-  //   },
-  //   {
-  //     title: 'Running'
-  //   }
-  // ];
+  $scope.workouts = User.get().workouts;
 
   // RUN ON CONTROLLER LOAD
-  // $http.get(`http://localhost:3000/workouts?user=${userId}`).then(response => {
-  //   console.log(response.data);
-  //   if (response.data.length) $scope.workouts.push(response.data.workouts);
-  // });
+  $rootScope.$on('full user retrieved', () => {
+    $scope.workouts = User.get().workouts;
+  });
 
   // FUNCTIONS
   function addItem(title) {
