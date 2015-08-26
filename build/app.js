@@ -20,18 +20,22 @@ angular.module('fitFriend', ['ionic', 'ngCordova', 'angularMoment', 'satellizer'
       // org.apache.cordova.statusbar required
       StatusBar.styleDefault();
     }
-    User.setId($window.localStorage.getItem('user'));
-    User.getFullUser().then((response) => {
-      User.set(response.data.user);
-      $rootScope.$emit('full user retrieved');
-    });
+    if ($auth.isAuthenticated()) {
+      User.setId($window.localStorage.getItem('user'));
+      User.getFullUser().then((response) => {
+        User.set(response.data.user);
+        $rootScope.$emit('full user retrieved');
+      });
+    }
   });
 
   $ionicPlatform.on('resume', () => {
-    User.getFullUser().then((response) => {
-      User.set(response.data.user);
-      $rootScope.$emit('full user retrieved');
-    });
+    if ($auth.isAuthenticated()) {
+      User.getFullUser().then((response) => {
+        User.set(response.data.user);
+        $rootScope.$emit('full user retrieved');
+      });
+    }
   });
 
 
@@ -50,7 +54,7 @@ angular.module('fitFriend', ['ionic', 'ngCordova', 'angularMoment', 'satellizer'
 
 .config(function($stateProvider, $urlRouterProvider, $authProvider) {
 
-  $authProvider.loginUrl = 'http://localhost:3000/user/authenticate';
+  $authProvider.loginUrl = 'http://localhost:3000/users/authenticate';
 
   $stateProvider
 
